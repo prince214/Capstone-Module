@@ -125,7 +125,7 @@
           <ul>
 
             <?php 
-                $sql="SELECT * FROM about";
+                $sql="SELECT * FROM skills";
                 $result = mysqli_query($conn,$sql);
                 while($row = mysqli_fetch_assoc($result)) {
                 ?>
@@ -133,7 +133,7 @@
 
                 
             <li><?php echo $row["skill_name"];?></li>
-            <li>Skill Two</li>
+            <!-- <li>Skill Two</li>
           </ul>
 
           <ul>
@@ -143,7 +143,7 @@
 
           <ul>
             <li>Skill One</li>
-            <li>Skill Two</li>
+            <li>Skill Two</li> -->
           </ul>
 
           <?php }
