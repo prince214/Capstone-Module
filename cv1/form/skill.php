@@ -1,7 +1,8 @@
 <!-- BOOTSTRAP VERSION : 4.3.1 -->
 <?php include 'connection.php' ?>
 <?php 
-
+    
+    function add_skill() {
       if(isset($_POST['skill_next'])){
           $name =  $_POST['skill'];
           $sql = "INSERT INTO skills (id,skill_name) VALUES (NULL,'$name')";
@@ -11,6 +12,8 @@
 
           }
       }
+}
+      
       
 
       ?>
@@ -25,7 +28,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="mystyle.css">
 
-    <title>Hello, world!</title>
+    <script src="https://kit.fontawesome.com/5106db6593.js" crossorigin="anonymous"></script>
+
+    <title>Add Skills</title>
+    <style type="text/css">
+      #list li{
+        list-style-type: none;
+        margin-left: -45px;
+        margin-bottom: 10px;
+      }
+    </style>
   </head>
   <body>
 
@@ -38,12 +50,22 @@
                     <fieldset>
                         <legend class="text-center header">Add Skill</legend>
 
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                        <div class="form-group text-center">
+                           
                             <div class="col-md-12">
-                                <input id="fname" name="skill" type="text" placeholder="Skill Name" class="form-control">
+                              <ul id="list">
+                                  <li>
+                                  <input id="fname" name="skill" type="text" placeholder="Skill Name" class="form-control">
+                                  </li>
+                              </ul>
+                              
+                                
+
                             </div>
+                            <span id ="add_skill" class="col-md-1 text-primary" style="font-size: 2rem; cursor: pointer;"><i class="far fa-plus-square"></i></span>
                         </div>
+
+                        
 
                         <div class="form-group">
                             <div class="col-md-12 text-center">
@@ -57,7 +79,19 @@
     </div>
 </div>
 
-
+<script>
+  
+  const list = document.getElementById("list");
+  console.log(list);
+  document.getElementById('add_skill').addEventListener("click",function(){
+    // add_skill();
+    const item = `<li>
+       <input id="fname" name="skill" type="text" placeholder="Skill Name" class="form-control">
+    </li>`;
+    const position = "beforeend";
+    list.insertAdjacentHTML(position, item);
+  });
+</script>
 
 
 
