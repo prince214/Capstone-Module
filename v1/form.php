@@ -12,9 +12,10 @@
 
 
           $sql = "INSERT INTO about (id,person_name,designation,description,linkedin,email,phone) VALUES (NULL, '$name','$designation','$message','$linkedin','$email','$phone')";
-
+       
           if(mysqli_query($conn,$sql)){
             echo "<script>window.location='education.php';</script>";
+            echo "success";
 
           }
           else{

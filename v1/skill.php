@@ -23,7 +23,27 @@
     </style>
   </head>
   <body>
+  <style>
+.dot {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: inline-block;
+}
 
+hr{
+    height: 5px;
+    width: 100px;
+    background: blue;
+    }
+</style>
+
+<div class = "col-md-6 mx-auto m-4">
+      <div class="dot bg-primary shadow"></div>
+      <div class="dot border shadow"></div>
+      <div class="dot border shadow"></div>
+      <div class="dot border shadow"></div>
+</div>
 
     <div class="container shadow p-3 mb-5 bg-white rounded">
     <div class="row">
@@ -41,7 +61,7 @@
                             <div class="col-md-12">
                               <ul id="list">
                                   <li>
-                                  <input id="fname" name="skill" type="text" placeholder="Skill Name" class="form-control">
+                                  <input id="fname" name="interest" type="text" placeholder="Skill Name" class="form-control">
                                   </li>
                               </ul>
                             </div>
@@ -99,7 +119,7 @@
               var request = new XMLHttpRequest();
               
               // Instantiating the request object
-              request.open("POST", "skill_ajax.php");
+              request.open("POST", "ajax/skill_ajax.php");
               
               // Defining event listener for readystatechange event
               request.onreadystatechange = function() {
